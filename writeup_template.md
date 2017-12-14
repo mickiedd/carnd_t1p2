@@ -16,7 +16,7 @@
 [image14]: ./features_map.png "features_map"
 
 ### Data Set Summary & Exploration
-
+![](./photos/4.jpg | width=100)
 #### 1. Basic summary of the data set
 
 I used the pandas library to calculate summary statistics of the traffic
