@@ -155,7 +155,7 @@ The model was able to correctly guess 1 of the 5 traffic signs, which gives an a
 
 #### 3. Watch the softmax probabilities for each prediction.
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+The code for making predictions on my final model is located in the very last cell of the Ipython notebook.
 
 For the first image, the model is relatively sure that this is a Slippery roadStop sign (probability of 0.9403), and it do look like a stop sign, but unfortunately it is not a Slippery roadStop sign, it's a No stopping sign.
 
