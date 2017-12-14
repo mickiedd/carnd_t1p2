@@ -153,7 +153,7 @@ Here are the results of the prediction:
 
 The model was able to correctly guess 1 of the 5 traffic signs, which gives an accuracy of 20%. This compares terrible to the accuracy on the test set of 0.8754.
 
-#### 3. Wathch the softmax probabilities for each prediction.
+#### 3. Watch the softmax probabilities for each prediction.
 
 The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
 
