@@ -69,6 +69,8 @@ As a first step, I decided not to convert the images to grayscale because as I k
 
 Then I prefer to scale the pixels between 0.0 and 1.0, or say normalized the image data so that these data can share a similar distribution, also this step can make these data center on a certain position(say 0.5, 0.5).
 
+As at last step, I one-hot the labels on train and validation dataset.
+
 I decided to generate additional data because more data can make the model fit better.
 
 To add more data to the the data set, I used the following techniques because it's very difficult to collect road sign images with labels. And this technique is data augmentation, such as flipping, color shifting, or random cropping.
@@ -78,36 +80,70 @@ Here is an example of an original image and an augmented image:
 ![alt text][image11]
 ![alt text][image12]
 
-The difference between the original data set and the augmented data set is the following ... 
+I decided to use the flipping one to augmente the train data, with these augmented data, the training examples number is now 69598.
 
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
 My final model consisted of the following layers:
 
-| Layer         		|     Description	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
-| RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv2d_25 (Conv2D)           (None, 32, 32, 32)        896       
+_________________________________________________________________
+conv2d_26 (Conv2D)           (None, 32, 32, 32)        9248      
+_________________________________________________________________
+max_pooling2d_13 (MaxPooling (None, 16, 16, 32)        0         
+_________________________________________________________________
+conv2d_27 (Conv2D)           (None, 16, 16, 64)        18496     
+_________________________________________________________________
+conv2d_28 (Conv2D)           (None, 16, 16, 64)        36928     
+_________________________________________________________________
+max_pooling2d_14 (MaxPooling (None, 8, 8, 64)          0         
+_________________________________________________________________
+conv2d_29 (Conv2D)           (None, 8, 8, 128)         73856     
+_________________________________________________________________
+conv2d_30 (Conv2D)           (None, 8, 8, 128)         147584    
+_________________________________________________________________
+max_pooling2d_15 (MaxPooling (None, 4, 4, 128)         0         
+_________________________________________________________________
+conv2d_31 (Conv2D)           (None, 4, 4, 256)         295168    
+_________________________________________________________________
+conv2d_32 (Conv2D)           (None, 4, 4, 256)         590080    
+_________________________________________________________________
+max_pooling2d_16 (MaxPooling (None, 2, 2, 256)         0         
+_________________________________________________________________
+flatten_4 (Flatten)          (None, 1024)              0         
+_________________________________________________________________
+dense_10 (Dense)             (None, 256)               262400    
+_________________________________________________________________
+dropout_7 (Dropout)          (None, 256)               0         
+_________________________________________________________________
+dense_11 (Dense)             (None, 256)               65792     
+_________________________________________________________________
+dropout_8 (Dropout)          (None, 256)               0         
+_________________________________________________________________
+dense_12 (Dense)             (None, 43)                11051     
+_________________________________________________________________
+activation_4 (Activation)    (None, 43)                0         
+=================================================================
+Total params: 1,511,499
+Trainable params: 1,511,499
+Non-trainable params: 0
+_________________________________________________________________
  
 
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-To train the model, I used an ....
+To train the model, I used an optimizer call RMSprop with learning rate 0.0004, and the batch size is 32, number of epochs is 16.
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
+* training set accuracy of 0.99
+* validation set accuracy of 0.9313 
 * test set accuracy of ?
 
 If an iterative approach was chosen:
