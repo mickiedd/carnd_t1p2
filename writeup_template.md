@@ -28,6 +28,9 @@ The goals / steps of this project are the following:
 [image7]: ./examples/placeholder.png "Traffic Sign 4"
 [image8]: ./examples/placeholder.png "Traffic Sign 5"
 [image9]: ./traffic_sign_distribution.png "Traffic sign distribution"
+[image10]: ./flipping.png "Flipping"
+[image11]: ./color_shifting.png "Color shifting"
+[image12]: ./random_crop.png "random crop"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -71,10 +74,9 @@ I decided to generate additional data because more data can make the model fit b
 To add more data to the the data set, I used the following techniques because it's very difficult to collect road sign images with labels. And this technique is data augmentation, such as flipping, color shifting, or random cropping.
 
 Here is an example of an original image and an augmented image:
-
-
-
-![alt text][image3]
+![alt text][image10]
+![alt text][image11]
+![alt text][image12]
 
 The difference between the original data set and the augmented data set is the following ... 
 
