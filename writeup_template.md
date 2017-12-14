@@ -27,6 +27,7 @@ The goals / steps of this project are the following:
 [image6]: ./examples/placeholder.png "Traffic Sign 3"
 [image7]: ./examples/placeholder.png "Traffic Sign 4"
 [image8]: ./examples/placeholder.png "Traffic Sign 5"
+[image9]: ./traffic_sign_distribution.png "Traffic sign distribution"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -55,7 +56,7 @@ signs data set:
 
 Here is an exploratory visualization of the data set. It is a bar chart showing how the data distribute
 
-![alt text][image1]
+![alt text][image9]
 
 ### Design and Test a Model Architecture
 
