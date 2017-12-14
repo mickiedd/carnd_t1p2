@@ -212,4 +212,4 @@ Photo 5
 
 ### Visualizing the Neural Network 
 #### 1. The visual output of the trained network's feature maps.
-![alt text][image8]
+![alt text][image14]
