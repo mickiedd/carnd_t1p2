@@ -34,7 +34,7 @@ I saw that this ia a uneven distribution.
 
 As a first step, I decided not to convert the images to grayscale because as I know different color has different meaning for the traffic sign.Such as red for attention, yellow for warnning, blue for tips.
 
-Then I prefer to scale the pixels between 0.0 and 1.0, or say normalized the image data so that these data can share a similar distribution, also this step can make these data center on a certain position(say 0.5, 0.5).
+Then I prefer to scale the pixels between 0.0 and 1.0, or say normalized the image data so that these data's dimensions can share a similar distribution, also this step can make these data center on a certain position(say 0.5, 0.5).
 
 As at last step, I one-hot the labels on train and validation dataset.
 
