@@ -172,7 +172,15 @@ Here are five German traffic signs that I found on the web:
 ![alt text][image4] ![alt text][image5] ![alt text][image6] 
 ![alt text][image7] ![alt text][image8]
 
-The first image might be difficult to classify because ...
+The first image might be difficult to classify because these are so many useless infomation around the road sign.
+
+The second image might be easy to classify because almost no useless infomation around the road sign, and it's a very clear image.
+
+The third image might be easy to cassify, but the dimension of this image is not quite squre, so the model mgiht be confuse by this image.
+
+The fourth image might be difficult to identify because it seems that is't not a standard modern road sign on earth.
+
+The last image might be difficult to identify because the road sign is cover by something, that thing will make the model confused.
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
