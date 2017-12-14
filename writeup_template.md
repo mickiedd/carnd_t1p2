@@ -151,7 +151,7 @@ Here are the results of the prediction:
 | Two way traffic ahead		| Pedestrians      							|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 1 of the 5 traffic signs, which gives an accuracy of 20%. This compares terrible to the accuracy on the test set of 0.8754.
 
 #### 3. Wathch the softmax probabilities for each prediction.
 
