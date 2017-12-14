@@ -176,7 +176,7 @@ The first image might be difficult to classify because these are so many useless
 
 The second image might be easy to classify because almost no useless infomation around the road sign, and it's a very clear image.
 
-The third image might be easy to cassify, but the dimension of this image is not quite squre, so the model mgiht be confuse by this image.
+The third image might be easy to cassify, but this is a historic traffic road sign before 1992, I have no historic traffic road signs training data to train, so the model maynot identify this sign.
 
 The fourth image might be difficult to identify because it seems that is't not a standard modern road sign on earth.
 
@@ -188,11 +188,11 @@ Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| No Stopping      		| Slippery road   									| 
+| Right-of-way at the next intersection     			| Right-of-way at the next intersection 										|
+| Children					| Bicyclies crossing											|
+| Start of a 30 km/h zone	      		| Keep right					 				|
+| Two way traffic ahead		| Pedestrians      							|
 
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
