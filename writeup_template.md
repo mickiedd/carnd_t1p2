@@ -26,6 +26,8 @@ Here is an exploratory visualization of the data set. It is a bar chart showing 
 
 ![alt text][image9]
 
+I saw that this ia a uneven distribution.
+
 ### Design and Test a Model Architecture
 
 #### 1. Preprocess the image data. 
