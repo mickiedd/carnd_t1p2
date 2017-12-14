@@ -22,11 +22,16 @@ The goals / steps of this project are the following:
 [image1]: ./examples/visualization.jpg "Visualization"
 [image2]: ./examples/grayscale.jpg "Grayscaling"
 [image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
+[image4]: ./photos/1.jpg "Traffic Sign 1"
+[image5]: ./photos/2.jpg "Traffic Sign 2"
+[image6]: ./photos/3.jpg "Traffic Sign 3"
+[image7]: ./photos/4.jpg "Traffic Sign 4"
+[image8]: ./photos/5.jpg "Traffic Sign 5"
+[image9]: ./traffic_sign_distribution.png "Traffic sign distribution"
+[image10]: ./flipping.png "Flipping"
+[image11]: ./color_shifting.png "Color shifting"
+[image12]: ./random_crop.png "random crop"
+[image13]: ./traning_process.png "training_process"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -45,69 +50,105 @@ You're reading it! and here is a link to my [project code](https://github.com/ud
 I used the pandas library to calculate summary statistics of the traffic
 signs data set:
 
-* The size of training set is ?
-* The size of the validation set is ?
-* The size of test set is ?
-* The shape of a traffic sign image is ?
-* The number of unique classes/labels in the data set is ?
+* The size of training set is 34799
+* The size of the validation set is 4410
+* The size of test set is 12630
+* The shape of a traffic sign image is (32, 32, 3)
+* The number of unique classes/labels in the data set is 43
 
 #### 2. Include an exploratory visualization of the dataset.
 
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
+Here is an exploratory visualization of the data set. It is a bar chart showing how the data distribute
 
-![alt text][image1]
+![alt text][image9]
 
 ### Design and Test a Model Architecture
 
 #### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
-As a first step, I decided to convert the images to grayscale because ...
+As a first step, I decided not to convert the images to grayscale because as I know different color has different meaning for the traffic sign.
 
-Here is an example of a traffic sign image before and after grayscaling.
+Then I prefer to scale the pixels between 0.0 and 1.0, or say normalized the image data so that these data can share a similar distribution, also this step can make these data center on a certain position(say 0.5, 0.5).
 
-![alt text][image2]
+As at last step, I one-hot the labels on train and validation dataset.
 
-As a last step, I normalized the image data because ...
+I decided to generate additional data because more data can make the model fit better.
 
-I decided to generate additional data because ... 
-
-To add more data to the the data set, I used the following techniques because ... 
+To add more data to the the data set, I used the following techniques because it's very difficult to collect road sign images with labels. And this technique is data augmentation, such as flipping, color shifting, or random cropping.
 
 Here is an example of an original image and an augmented image:
+![alt text][image10]
+![alt text][image11]
+![alt text][image12]
 
-![alt text][image3]
-
-The difference between the original data set and the augmented data set is the following ... 
+I decided to use the flipping one to augmente the train data, with these augmented data, the training examples number is now 69598.
 
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
 My final model consisted of the following layers:
 
-| Layer         		|     Description	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
-| RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
+<pre>
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv2d_25 (Conv2D)           (None, 32, 32, 32)        896       
+_________________________________________________________________
+conv2d_26 (Conv2D)           (None, 32, 32, 32)        9248      
+_________________________________________________________________
+max_pooling2d_13 (MaxPooling (None, 16, 16, 32)        0         
+_________________________________________________________________
+conv2d_27 (Conv2D)           (None, 16, 16, 64)        18496     
+_________________________________________________________________
+conv2d_28 (Conv2D)           (None, 16, 16, 64)        36928     
+_________________________________________________________________
+max_pooling2d_14 (MaxPooling (None, 8, 8, 64)          0         
+_________________________________________________________________
+conv2d_29 (Conv2D)           (None, 8, 8, 128)         73856     
+_________________________________________________________________
+conv2d_30 (Conv2D)           (None, 8, 8, 128)         147584    
+_________________________________________________________________
+max_pooling2d_15 (MaxPooling (None, 4, 4, 128)         0         
+_________________________________________________________________
+conv2d_31 (Conv2D)           (None, 4, 4, 256)         295168    
+_________________________________________________________________
+conv2d_32 (Conv2D)           (None, 4, 4, 256)         590080    
+_________________________________________________________________
+max_pooling2d_16 (MaxPooling (None, 2, 2, 256)         0         
+_________________________________________________________________
+flatten_4 (Flatten)          (None, 1024)              0         
+_________________________________________________________________
+dense_10 (Dense)             (None, 256)               262400    
+_________________________________________________________________
+dropout_7 (Dropout)          (None, 256)               0         
+_________________________________________________________________
+dense_11 (Dense)             (None, 256)               65792     
+_________________________________________________________________
+dropout_8 (Dropout)          (None, 256)               0         
+_________________________________________________________________
+dense_12 (Dense)             (None, 43)                11051     
+_________________________________________________________________
+activation_4 (Activation)    (None, 43)                0         
+=================================================================
+Total params: 1,511,499
+Trainable params: 1,511,499
+Non-trainable params: 0
+_________________________________________________________________
  
-
+</pre>
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-To train the model, I used an ....
+To train the model, I used an optimizer call RMSprop with learning rate 0.0004, and the batch size is 32, number of epochs is 16.
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+* training set accuracy of 0.99
+* validation set accuracy of 0.9313 
+* test set accuracy of 0.8754
+
+![alt text][image13]
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
@@ -131,7 +172,15 @@ Here are five German traffic signs that I found on the web:
 ![alt text][image4] ![alt text][image5] ![alt text][image6] 
 ![alt text][image7] ![alt text][image8]
 
-The first image might be difficult to classify because ...
+The first image might be difficult to classify because these are so many useless infomation around the road sign.
+
+The second image might be easy to classify because almost no useless infomation around the road sign, and it's a very clear image.
+
+The third image might be easy to cassify, but this is a historic traffic road sign before 1992, I have no historic traffic road signs training data to train, so the model maynot identify this sign.
+
+The fourth image might be difficult to identify because it seems that is't not a standard modern road sign on earth.
+
+The last image might be difficult to identify because the road sign is cover by something, that thing will make the model confused.
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -139,11 +188,11 @@ Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| No Stopping      		| Slippery road   									| 
+| Right-of-way at the next intersection     			| Right-of-way at the next intersection 										|
+| Children					| Bicyclies crossing											|
+| Start of a 30 km/h zone	      		| Keep right					 				|
+| Two way traffic ahead		| Pedestrians      							|
 
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
