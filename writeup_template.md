@@ -47,7 +47,7 @@ Here is an example of an original image and an augmented image:
 ![alt text][image11]
 ![alt text][image12]
 
-I decided to use the flipping one to augmente the train data, with these augmented data, the training examples number is now 69598.
+I decided to use the flipping one to augment the train data, with these augmented data, the training examples number is now 69598.
 
 
 #### 2. Final model architecture.
