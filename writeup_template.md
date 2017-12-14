@@ -128,11 +128,11 @@ My final model results were:
 
 Here are five German traffic signs that I found on the web:
 
-<img src="./photos/4.jpg" width="32" height="32">
-<img src="./photos/5.jpg" width="32" height="32">
-<img src="./photos/6.jpg" width="32" height="32">
-<img src="./photos/7.jpg" width="32" height="32">
-<img src="./photos/8.jpg" width="32" height="32">
+<img src="./photos/1.jpg" width="120" height="120">
+<img src="./photos/2.jpg" width="120" height="120">
+<img src="./photos/3.jpg" width="120" height="120">
+<img src="./photos/4.jpg" width="120" height="120">
+<img src="./photos/5.jpg" width="120" height="120">
 
 The first image might be difficult to classify because these are so many useless infomation around the road sign.
 
