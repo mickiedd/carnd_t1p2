@@ -88,6 +88,7 @@ I decided to use the flipping one to augmente the train data, with these augment
 
 My final model consisted of the following layers:
 
+<pre>
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
@@ -134,7 +135,7 @@ Trainable params: 1,511,499
 Non-trainable params: 0
 _________________________________________________________________
  
-
+</pre>
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
