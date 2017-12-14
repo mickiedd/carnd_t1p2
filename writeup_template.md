@@ -201,18 +201,55 @@ The model was able to correctly guess 4 of the 5 traffic signs, which gives an a
 
 The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+For the first image, the model is relatively sure that this is a Slippery roadStop sign (probability of 0.9403), and it do look like a stop sign, but unfortunately it is not a Slippery roadStop sign, it's a No stopping sign.
 
-| Probability         	|     Prediction	        					| 
+Photo 1
+
+| Probability | Prediction | 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+|0.9403|Slippery roadStop sign|
+|0.0251|Speed limit (50km/h)Stop sign|
+|0.012|Bicycles crossingStop sign|
 
+For the second image, the model is relatively sure that this is a Right-of-way at the next intersectionStop sign(probability of 0.9992), and yes it's a Right-of-way at the next intersectionStop sign.
 
-For the second image ... 
+Photo 2
+
+| Probability | Prediction | 
+|:---------------------:|:---------------------------------------------:| 
+|0.9992|Right-of-way at the next intersectionStop sign|
+|0.0008|Double curveStop sign|
+|0.0|PedestriansStop sign|
+
+For the third image, the model is not very sure if it's a Bicycles crossingStop sign(probability 0.4486) or a Children crossingStop sign(probability 0.4253), the model seem to prefer the first choice, but the right answer is the second.
+
+Photo 3
+
+| Probability | Prediction | 
+|:---------------------:|:---------------------------------------------:| 
+|0.4486|Bicycles crossingStop sign|
+|0.4253|Children crossingStop sign|
+|0.0502|Speed limit (20km/h)Stop sign|
+
+For the fourth image, the model is relatively sure that this is a Keep rightStop sign, but it's not. It's a Start of a 30 km/h zone sign.
+
+Photo 4
+
+| Probability | Prediction | 
+|:---------------------:|:---------------------------------------------:| 
+|0.9899|Keep rightStop sign|
+|0.0042|Go straight or leftStop sign|
+|0.0031|Keep leftStop sign|
+
+For the last image, the model cannot tell what this sign it is, because all the top 3 probabilities is less than 10%.
+
+Photo 5
+
+| Probability | Prediction | 
+|:---------------------:|:---------------------------------------------:| 
+|0.0837|PedestriansStop sign|
+|0.0832|Beware of ice/snowStop sign|
+|0.0825|Road workStop sign|
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
