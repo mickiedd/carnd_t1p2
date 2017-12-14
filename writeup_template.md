@@ -51,7 +51,7 @@ I used the pandas library to calculate summary statistics of the traffic
 signs data set:
 
 * The size of training set is 34799
-* The size of the validation set is ?
+* The size of the validation set is 4410
 * The size of test set is 12630
 * The shape of a traffic sign image is (32, 32, 3)
 * The number of unique classes/labels in the data set is 43
@@ -146,7 +146,7 @@ To train the model, I used an optimizer call RMSprop with learning rate 0.0004, 
 My final model results were:
 * training set accuracy of 0.99
 * validation set accuracy of 0.9313 
-* test set accuracy of ?
+* test set accuracy of 0.8754
 
 ![alt text][image13]
 
