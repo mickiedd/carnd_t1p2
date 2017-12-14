@@ -62,19 +62,17 @@ Here is an exploratory visualization of the data set. It is a bar chart showing 
 
 #### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
-As a first step, I decided to convert the images to grayscale because ...
+As a first step, I decided not to convert the images to grayscale because as I know different color has different meaning for the traffic sign.
 
-Here is an example of a traffic sign image before and after grayscaling.
+Then I prefer to scale the pixels between 0.0 and 1.0, or say normalized the image data so that these data can share a similar distribution, also this step can make these data center on a certain position(say 0.5, 0.5).
 
-![alt text][image2]
+I decided to generate additional data because more data can make the model fit better.
 
-As a last step, I normalized the image data because ...
-
-I decided to generate additional data because ... 
-
-To add more data to the the data set, I used the following techniques because ... 
+To add more data to the the data set, I used the following techniques because it's very difficult to collect road sign images with labels. And this technique is data augmentation, such as flipping, color shifting, or random cropping.
 
 Here is an example of an original image and an augmented image:
+
+
 
 ![alt text][image3]
 
