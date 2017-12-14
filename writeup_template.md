@@ -22,15 +22,16 @@ The goals / steps of this project are the following:
 [image1]: ./examples/visualization.jpg "Visualization"
 [image2]: ./examples/grayscale.jpg "Grayscaling"
 [image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
+[image4]: ./photos/1.jpg "Traffic Sign 1"
+[image5]: ./photos/2.jpg "Traffic Sign 2"
+[image6]: ./photos/3.jpg "Traffic Sign 3"
+[image7]: ./photos/4.jpg "Traffic Sign 4"
+[image8]: ./photos/5.jpg "Traffic Sign 5"
 [image9]: ./traffic_sign_distribution.png "Traffic sign distribution"
 [image10]: ./flipping.png "Flipping"
 [image11]: ./color_shifting.png "Color shifting"
 [image12]: ./random_crop.png "random crop"
+[image13]: ./training_process.png "training_process"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -145,6 +146,8 @@ My final model results were:
 * training set accuracy of 0.99
 * validation set accuracy of 0.9313 
 * test set accuracy of ?
+
+![alt text][image13]
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
