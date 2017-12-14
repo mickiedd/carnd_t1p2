@@ -31,7 +31,7 @@ The goals / steps of this project are the following:
 [image10]: ./flipping.png "Flipping"
 [image11]: ./color_shifting.png "Color shifting"
 [image12]: ./random_crop.png "random crop"
-[image13]: ./training_process.png "training_process"
+[image13]: ./traning_process.png "training_process"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
