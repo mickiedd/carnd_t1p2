@@ -16,7 +16,7 @@
 [image14]: ./features_map.png "features_map"
 
 ### Data Set Summary & Exploration
-<img src="./photos/4.jpg" width="40%">
+
 #### 1. Basic summary of the data set
 
 I used the pandas library to calculate summary statistics of the traffic
@@ -128,8 +128,11 @@ My final model results were:
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+<img src="./photos/4.jpg" width="32" height="32">
+<img src="./photos/5.jpg" width="32" height="32">
+<img src="./photos/6.jpg" width="32" height="32">
+<img src="./photos/7.jpg" width="32" height="32">
+<img src="./photos/8.jpg" width="32" height="32">
 
 The first image might be difficult to classify because these are so many useless infomation around the road sign.
 
