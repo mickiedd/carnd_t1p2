@@ -209,25 +209,33 @@ Photo 1
 |0.9403|Slippery roadStop sign|
 |0.0251|Speed limit (50km/h)Stop sign|
 |0.012|Bicycles crossingStop sign|
+
 Photo 2
+
 | Probability | Prediction | 
 |:---------------------:|:---------------------------------------------:| 
 |0.9992|Right-of-way at the next intersectionStop sign|
 |0.0008|Double curveStop sign|
 |0.0|PedestriansStop sign|
+
 Photo 3
+
 | Probability | Prediction | 
 |:---------------------:|:---------------------------------------------:| 
 |0.4486|Bicycles crossingStop sign|
 |0.4253|Children crossingStop sign|
 |0.0502|Speed limit (20km/h)Stop sign|
+
 Photo 4
+
 | Probability | Prediction | 
 |:---------------------:|:---------------------------------------------:| 
 |0.9899|Keep rightStop sign|
 |0.0042|Go straight or leftStop sign|
 |0.0031|Keep leftStop sign|
+
 Photo 5
+
 | Probability | Prediction | 
 |:---------------------:|:---------------------------------------------:| 
 |0.0837|PedestriansStop sign|
