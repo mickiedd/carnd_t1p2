@@ -157,11 +157,11 @@ _________________________________________________________________
 
 This architecture has 2 convolutional layers, and each layer is followed by a pooling layer and a dropout to prevent overfit, it seems ok but the result is terrible, I only got a accuracy of 0.3109 over 16 epoches, and it's not convergence yet, this means I need more training on this architecture, so I decided to train more epoches on this model.
 
-After 32 epoches, the accuracy of validation dataset on this model is up to 0.3853, it's too slow, and still not convergence yet, so I decided to imrove the learning rate.
+After 32 epoches, the accuracy of validation dataset on this model is up to 0.3853, it's too slow, and still not convergence yet, so I decided to improve the learning rate.
 
-And then I found that the model still not convergence, So I realized that this simple model is not good enough to fit the dataset, so I decided to imrove the CNN model.
+Then I found that the model still not convergence, So I realized that this simple model is not good enough to fit the dataset, so I decided to improve the CNN model.
 
-At last I quadruple the convolutional layers up to 8, and every two convolutaional layers followed by a max pooling layer, to prevent overfit, I add two dropout followed by the faltten layer, this model got a accuracy 0.9313 for the validation dataset after data aumentation.
+At last I modified the model, first I quadruple the convolutional layers up to 8, and then every two convolutaional layers followed by a max pooling layer, to prevent overfit, I add two dropout followed by the faltten layer, finally this model got a accuracy 0.9313 for the validation dataset after the flipping data aumentation.
 
 ![alt text][image13]
 
