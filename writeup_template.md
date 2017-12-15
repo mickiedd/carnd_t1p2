@@ -114,6 +114,55 @@ My final model results were:
 * validation set accuracy of 0.9313 
 * test set accuracy of 0.8754
 
+I first try to train on a simple model, here is the architecture:
+
+<pre>
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv2d_4 (Conv2D)            (None, 32, 32, 32)        6176      
+_________________________________________________________________
+max_pooling2d_3 (MaxPooling2 (None, 16, 16, 32)        0         
+_________________________________________________________________
+dropout_6 (Dropout)          (None, 16, 16, 32)        0         
+_________________________________________________________________
+conv2d_5 (Conv2D)            (None, 16, 16, 16)        8208      
+_________________________________________________________________
+max_pooling2d_4 (MaxPooling2 (None, 8, 8, 16)          0         
+_________________________________________________________________
+dropout_7 (Dropout)          (None, 8, 8, 16)          0         
+_________________________________________________________________
+flatten_2 (Flatten)          (None, 1024)              0         
+_________________________________________________________________
+dense_4 (Dense)              (None, 512)               524800    
+_________________________________________________________________
+dropout_8 (Dropout)          (None, 512)               0         
+_________________________________________________________________
+dense_5 (Dense)              (None, 256)               131328    
+_________________________________________________________________
+dropout_9 (Dropout)          (None, 256)               0         
+_________________________________________________________________
+dense_6 (Dense)              (None, 64)                16448     
+_________________________________________________________________
+dropout_10 (Dropout)         (None, 64)                0         
+_________________________________________________________________
+dense_7 (Dense)              (None, 43)                2795      
+_________________________________________________________________
+activation_1 (Activation)    (None, 43)                0         
+=================================================================
+Total params: 689,755
+Trainable params: 689,755
+Non-trainable params: 0
+_________________________________________________________________
+</pre>
+
+This architecture has 2 convolutional layer, and each layer is followed by a pooling layer and a dropout to prevent overfit, it seems ok but the result it terrible, I only got a accuracy of 0.3109 over 16 epoches, and it's not convergence yet, this means I need more training on this architecture, so I decided to train more epoches on this model.
+
+After 32 epoches, the accuracy of validation dataset on this model is up to 0.3853, it's too slow, and still not convergence yet, so I decided to imrove the learning rate.
+
+And then I found that the model still not convergence, So I realized that this simple model is not good enough to fit the dataset, so I decided to imrove the CNN model.
+
+At last I quadruple the convolutional layers up to 8, and every two convolutaional layers followed by a max pooling layer, to prevent overfit, I add two dropout followed by the faltten layer, this model got a accuracy 0.9313 for the validation dataset after data aumentation.
+
 ![alt text][image13]
 
 ### Test a Model on New Images
