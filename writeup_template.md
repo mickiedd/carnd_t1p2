@@ -6,6 +6,7 @@
 [image12]: ./random_crop.png "random crop"
 [image13]: ./traning_process.png "training_process"
 [image14]: ./features_map.png "features_map"
+[image15]: ./simple_covnet.png "simple_covnet"
 
 ### Data Set Summary & Exploration
 
@@ -155,9 +156,11 @@ Non-trainable params: 0
 _________________________________________________________________
 </pre>
 
-This architecture has 2 convolutional layers, and each layer is followed by a pooling layer and a dropout to prevent overfit, it seems ok but the result is terrible, I only got a accuracy of 0.3109 over 16 epoches, and it's not convergence yet, this means I need more training on this architecture, so I decided to train more epoches on this model.
+This architecture has 2 convolutional layers, and each layer is followed by a pooling layer and a dropout to prevent overfit, it seems ok but the result is terrible, I only got a accuracy of 0.4560 over 16 epoches, and it's not convergence yet, this means I need more training on this architecture, so I decided to train more epoches on this model.
 
-After 32 epoches, the accuracy of validation dataset on this model is up to 0.3853, it's too slow, and still not convergence yet, so I decided to improve the learning rate.
+After 32 epoches, the accuracy of validation dataset on this model is up to 0.5490, it's too slow, and still not convergence yet, so I decided to improve the learning rate.
+
+![alt text][image15]
 
 Then I found that the model still not convergence, So I realized that this simple model is not good enough to fit the dataset, so I decided to improve the CNN model.
 
