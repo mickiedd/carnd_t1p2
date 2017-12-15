@@ -155,7 +155,7 @@ Non-trainable params: 0
 _________________________________________________________________
 </pre>
 
-This architecture has 2 convolutional layer, and each layer is followed by a pooling layer and a dropout to prevent overfit, it seems ok but the result it terrible, I only got a accuracy of 0.3109 over 16 epoches, and it's not convergence yet, this means I need more training on this architecture, so I decided to train more epoches on this model.
+This architecture has 2 convolutional layers, and each layer is followed by a pooling layer and a dropout to prevent overfit, it seems ok but the result is terrible, I only got a accuracy of 0.3109 over 16 epoches, and it's not convergence yet, this means I need more training on this architecture, so I decided to train more epoches on this model.
 
 After 32 epoches, the accuracy of validation dataset on this model is up to 0.3853, it's too slow, and still not convergence yet, so I decided to imrove the learning rate.
 
